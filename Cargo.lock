@@ -2349,8 +2349,7 @@ dependencies = [
 [[package]]
 name = "igd-next"
 version = "0.14.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "064d90fec10d541084e7b39ead8875a5a80d9114a2b18791565253bae25f49e4"
+source = "git+https://github.com/mickvandijke/igd-next#a06b503737681185187ab936a226308c61a25d7c"
 dependencies = [
  "async-trait",
  "attohttpc",
