@@ -47,7 +47,25 @@ jobs:
           save-if: false
 
       - name: Run all tests
-        run: cargo test --package "$CRATE" --all-features
+        run:
+          if [ "$CRATE" = "libp2p-kad" ]; then
+            echo "Running tests for libp2p-kad with k-20 (default)"
+            cargo test --package libp2p-kad --all-features
+          
+            echo "Running tests for libp2p-kad with k-4"
+            cargo test --package libp2p-kad --features serde,k-4
+            
+            echo "Running tests for libp2p-kad with k-8"
+            cargo test --package libp2p-kad --features serde,k-8
+            
+            echo "Running tests for libp2p-kad with k-12"
+            cargo test --package libp2p-kad --features serde,k-12
+          
+            echo "Running tests for libp2p-kad with k-16"
+            cargo test --package libp2p-kad --features serde,k-16
+          else
+            cargo test --package "$CRATE" --all-features
+          fi
 
       - name: Check if we compile without any features activated
         run: cargo build --package "$CRATE" --no-default-features
