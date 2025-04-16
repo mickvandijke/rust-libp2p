@@ -88,7 +88,7 @@ pub use record::{store, Key as RecordKey, ProviderRecord, Record};
 /// DHT should agree on the choices made for (1) and (2).
 ///
 /// The current value is `20`.
-pub const K_VALUE: NonZeroUsize = unsafe { NonZeroUsize::new_unchecked(20) };
+pub const K_VALUE: NonZeroUsize = unsafe { NonZeroUsize::new_unchecked(8) };
 
 /// The `α` parameter of the Kademlia specification.
 ///
